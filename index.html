@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indice de Masa Corporal (IMC)</title>
+    <!--Tailwind-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--Fontsgoogle-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!--propios styles-->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-[Poppins] bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] min-h-screen flex flex-col justify-between">
+    <!-- Header fijo -->
+    <header class="bg-white w-full p-4 fixed top-0 z-10">
+        <nav class="flex justify-center">
+            <div>
+                <img class="w-16" src="https://i.ibb.co/mXcHLjZ/IMC.png" alt="IMC" border="0">
+            </div>
+        </nav>
+    </header>
+    <!-- Contenido principal -->
+    <main class="flex-grow mt-24 flex flex-col items-center justify-start">
+        <!-- Formulario -->
+        <div class="card">
+            <h2 class="text-center text-lg font-semibold mb-4">Formulario de Peso y Altura</h2>
+            <form id="datosEnvio" class="flex flex-col space-y-4">
+                <div>
+                    <label for="peso" class="block text-sm">Peso (kg):</label>
+                    <input type="number" id="peso" name="peso" step="0.1" min="0" required class="w-full p-2 rounded border">
+                </div>
+                <div>
+                    <label for="altura" class="block text-sm">Altura (m):</label>
+                    <input type="number" id="altura" name="altura" step="0.01" min="0" required class="w-full p-2 rounded border">
+                </div>
+                <button type="button" onclick="calcularIMC()" class="bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+                    Realizar Cálculo
+                </button>
+            </form>
+        </div>
+        <!-- Resultados dentro de la tarjeta -->
+        <div class="card"><!--mb para espacios y card de styles-->
+            <h2 class="text-center text-lg font-semibold mb-4">Información del Cálculo</h2>
+            <div id="informacionCalificacion" class="text-center overflow-auto"></div>
+            <!--Tabla de IMC-->
+            <div class="container mx-auto p-4">
+                <h3 class="text-center text-lg font-semibold mb-4">Tabla IMC</h3>                <div class="overflow-x-auto">
+                    <table class="table-auto w-full max-w-lg mx-auto bg-white shadow-md rounded-lg overflow-hidden">
+                        <thead class="bg-blue-500 text-white">
+                            <tr>
+                                <th class="px-4 py-2">IMC</th>
+                                <th class="px-4 py-2">Nivel de peso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="bajoPeso" class="bg-gray-50">
+                                <td class="border px-4 py-2 text-center">Por debajo de 18.5</td>
+                                <td class="border px-4 py-2 text-center">Bajo peso</td>
+                            </tr>
+                            <tr id="pesoSaludable">
+                                <td class="border px-4 py-2 text-center">18.5—24.9</td>
+                                <td class="border px-4 py-2 text-center">Peso saludable</td>
+                            </tr>
+                            <tr id="sobrePeso" class="bg-gray-50">
+                                <td class="border px-4 py-2 text-center">25.0—29.9</td>
+                                <td class="border px-4 py-2 text-center">Sobrepeso</td>
+                            </tr>
+                            <tr id="obesidad">
+                                <td class="border px-4 py-2 text-center">30.0 o más</td>
+                                <td class="border px-4 py-2 text-center">Obesidad</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer-->
+    <footer class="bg-white w-full text-center p-4">
+        <p class="text-gray-600 text-sm">&copy; 2024 Indice de Masa Corporal. Jonatan Camilo Igua</p>
+    </footer>
+    <script src="funtions.js"></script>
+</body>
+</html>

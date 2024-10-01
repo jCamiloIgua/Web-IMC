@@ -1,0 +1,31 @@
+
+/* Estilo global */
+body {
+    background: linear-gradient(to top, #fbc2eb, #a6c1ee);
+    min-height: 100vh;
+}
+
+/* Estilos para las tarjetas */
+.card {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    width: 24rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilo para el header */
+header {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el footer */
+footer {
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
