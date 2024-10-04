@@ -41,10 +41,11 @@
                     Realizar Cálculo
                 </button>
             </form>
+            <div id="informacionCalculoTitulo" ></div>
         </div>
         <!-- Resultados dentro de la tarjeta -->
         <div class="card"><!--mb para espacios y card de styles-->
-            <h2 class="text-center text-lg font-semibold mb-4">Información del Cálculo</h2>
+            <h2  class="text-center text-lg font-semibold mb-4">Información del Cálculo</h2>
             <div id="informacionCalificacion" class="text-center overflow-auto"></div>
             <!--Tabla de IMC-->
             <div class="container mx-auto p-4">
@@ -77,6 +78,14 @@
                     </table>
                 </div>
             </div>
+            <button type="button" class="bg-blue-500 text-white py-2 rounded hover:bg-blue-600" onclick="scrollToDieta()">
+                Recomendación Dieta
+            </button>
+        </div>
+        <!-- Recomendación de dieta -->
+        <div  id="recomendacionDieta"  class="card">
+            <h2 class="text-center text-lg font-semibold mb-4">Recomendación de Dieta</h2>
+        <div id="recomendacionDieta" class="text-center overflow-auto"></div>
         </div>
     </main>
     <!-- Footer-->
